@@ -6,6 +6,14 @@ class Library
 
   def books
     return @books
-  end 
+  end
+
+  def find_book_by_title(title)
+    for book in @books
+      if title == book[:title]
+        return book
+      end
+    end
+  end
 
 end
