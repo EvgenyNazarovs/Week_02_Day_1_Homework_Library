@@ -51,13 +51,23 @@ class TestLibrary < Minitest::Test
     assert_equal(@books[2][:rental_details], @gu_library.test_find_rental_details_by_title("state_and_revolution"))
   end
 
+  def test_add_new_book
+    new_book = {
+      title: "crime_and_punishment",
+      rental_details: {
+        student_name: "",
+        date: ""
+      }
+    }
+    @gu_library.add_new_book("crime_and_punishment")
+    assert_equal(new_book, @books[3])
+  end
+
 
 end
 
 
 
-# Create a method that takes in a book title and returns only
-# the rental details for that book.
 # Create a method that takes in a book title and adds it to our
 # book list (add a new hash for the book with the student name
 # and date being left as empty strings)
