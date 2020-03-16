@@ -48,7 +48,7 @@ class TestLibrary < Minitest::Test
   end
 
   def test_find_rental_details_by_title
-    assert_equal(@books[2][:rental_details], @gu_library.test_find_rental_details_by_title("state_and_revolution"))
+    assert_equal(@books[2][:rental_details], @gu_library.find_rental_details_by_title("state_and_revolution"))
   end
 
   def test_add_new_book

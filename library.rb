@@ -18,7 +18,7 @@ class Library
     end
   end
 
-  def test_find_rental_details_by_title(title)
+  def find_rental_details_by_title(title)
     for book in @books
       if title == book[:title]
         return book[:rental_details]
@@ -34,16 +34,15 @@ class Library
         date: ""
       }
     }
+
     @books.push(new_book)
+    
   end
 
   def change_rental_details(title, borrower, due_date)
-    for book in @books
-      if title == book[:title]
-        book[:rental_details][:student_name] = borrower
-        book[:rental_details][:date] = due_date
-      end
-    end
+    rental_details = find_rental_details_by_title(title)
+        rental_details[:student_name] = borrower
+        rental_details[:date] = due_date
   end
 
 
