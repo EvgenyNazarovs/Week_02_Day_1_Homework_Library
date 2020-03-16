@@ -47,14 +47,15 @@ class TestLibrary < Minitest::Test
     assert_equal(@books[1], @gu_library.find_book_by_title("infinite_jest"))
   end
 
+  def test_find_rental_details_by_title
+    assert_equal(@books[2][:rental_details], @gu_library.test_find_rental_details_by_title("state_and_revolution"))
+  end
+
 
 end
 
 
-#
-# Create a getter for the books
-# Create a method that takes in a book title and returns
-# all of the information about that book.
+
 # Create a method that takes in a book title and returns only
 # the rental details for that book.
 # Create a method that takes in a book title and adds it to our
