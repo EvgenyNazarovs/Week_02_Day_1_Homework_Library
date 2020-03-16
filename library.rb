@@ -1,12 +1,14 @@
 class Library
 
+  attr_accessor :books
+
   def initialize(books)
     @books = books
   end
 
-  def books
-    return @books
-  end
+  # def books
+  #   return @books
+  # end
 
   def find_book_by_title(title)
     for book in @books
@@ -33,6 +35,16 @@ class Library
       }
     }
     @books.push(new_book)
-  end 
+  end
+
+  def change_rental_details(title, borrower, due_date)
+    for book in @books
+      if title == book[:title]
+        book[:rental_details][:student_name] = borrower
+        book[:rental_details][:date] = due_date
+      end
+    end
+  end
+
 
 end

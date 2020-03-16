@@ -63,14 +63,18 @@ class TestLibrary < Minitest::Test
     assert_equal(new_book, @books[3])
   end
 
+  def test_change_rental_details
+    @gu_library.change_rental_details("infinite_jest", "Eugene", "15/03/20")
+    assert_equal("Eugene", @books[1][:rental_details][:student_name])
+    assert_equal("15/03/20", @books[1][:rental_details][:date])
+  end
+
 
 end
 
 
 
-# Create a method that takes in a book title and adds it to our
-# book list (add a new hash for the book with the student name
-# and date being left as empty strings)
+
 # Create a method that changes the rental details of a book
 # by taking in the title of the book, the student renting it
 # and the date it’s due to be returned.
